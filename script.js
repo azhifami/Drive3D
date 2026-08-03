@@ -1,3 +1,5 @@
+alert("script jalan");
+
 import * as THREE from "./build/three.module.js";
 import Renderer from "./engine/Renderer.js";
 

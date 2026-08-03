@@ -1,6 +1,6 @@
 import * as THREE from "../build/three.module.js";
 
-export class Renderer {
+export default class Renderer {
 
     constructor() {
 
@@ -9,18 +9,11 @@ export class Renderer {
         });
 
         this.renderer.setPixelRatio(window.devicePixelRatio);
-
-        this.renderer.setSize(
-            window.innerWidth,
-            window.innerHeight
-        );
+        this.renderer.setSize(window.innerWidth, window.innerHeight);
 
         this.renderer.shadowMap.enabled = true;
 
-        document.body.appendChild(
-            this.renderer.domElement
-        );
-
+        document.body.appendChild(this.renderer.domElement);
     }
 
     render(scene, camera) {
@@ -30,8 +23,7 @@ export class Renderer {
     resize(camera) {
 
         camera.aspect =
-            window.innerWidth /
-            window.innerHeight;
+            window.innerWidth / window.innerHeight;
 
         camera.updateProjectionMatrix();
 
@@ -39,7 +31,5 @@ export class Renderer {
             window.innerWidth,
             window.innerHeight
         );
-
     }
-
 }
